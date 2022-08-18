@@ -1,0 +1,21 @@
+import TodoItem from './TodoItem';
+
+
+const TodoList = ({todos, onDelete, onToggleTodo}) => {
+    return (
+        <ul className="list-group">                   
+            {
+                todos?.map(todo =>(
+                    <TodoItem 
+                    key = { todo.id }  
+                    todo={todo}
+                    onDelete = { onDelete }
+                    onToggleTodo = {onToggleTodo}
+                    />
+                ))
+            }
+        </ul>
+    );
+};
+
+export default TodoList;
